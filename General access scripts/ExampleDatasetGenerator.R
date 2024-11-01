@@ -149,7 +149,7 @@ if (!dir.exists(output_folder_anonymized)) {
 
 data_list_anonymized <- map(data_list, ~ anonymize_data(.x, farm_names))
 walk2(data_list_anonymized, names(data_list_anonymized), ~ {
-  file_path <- file.path(output_folder, paste0(.y, "_anonymized.csv"))
+  file_path <- file.path(output_folder_anonymized, paste0(.y, "_anonymized.csv"))
   write.csv(.x, file = file_path, row.names = FALSE)
   message(paste("Anonymized and saved:", file_path))
 })
